@@ -13,6 +13,12 @@ require('dotenv').config();
 
 const PORT = 8080 || process.env.PORT;
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
+
+console.log(process.env.DB_USER);
+console.log(process.env.DB_PASSWORD);
+console.log(process.env.DB_HOST);
+console.log(process.env.DB_NAME);
+
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
     console.log('DB connected')
