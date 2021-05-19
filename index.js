@@ -47,6 +47,8 @@ app.get('/', async (req, res) => {
     })
 });
 
-app.listen(PORT, ()=> {
+app.listen(PORT, (err)=> {
+    if(err)
+        console.error(err)
     console.log(`Listening server on port ${PORT}`)
 });
