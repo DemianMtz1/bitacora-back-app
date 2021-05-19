@@ -22,7 +22,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     console.error(err)
 });
 
-// JSON request -
+// JSON request
 app.use(express.json());
 app.use('/members', memberRouter);
 app.use('/tasks', taskRouter);
