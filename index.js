@@ -11,7 +11,7 @@ const fs = require('fs');
 
 require('dotenv').config();
 
-const PORT = 8080 || process.env.PORT;
+const PORT = process.env.PORT|| 8080;
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}`;
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
