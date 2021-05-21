@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+
 const mongoose = require('mongoose');
 const taskRouter = require('./assets/routers/taskRouters');
 const memberRouter = require('./assets/routers/memberRouters');
@@ -23,6 +25,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 });
 
 // JSON request
+app.use(cors())
 app.use(express.json());
 app.use('/members', memberRouter);
 app.use('/tasks', taskRouter);
